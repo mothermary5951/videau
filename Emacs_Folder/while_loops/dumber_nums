@@ -1,0 +1,31 @@
+def dumber_nums(i = 0, numbers = [], product = 0 * 2):
+
+    # return (i = 0)
+    # return (numbers = [])
+        print "What is the endpoint? "
+
+        x = raw_input()
+
+        while i < int(x):
+              print "At the top i is %d" % i
+              numbers.append(i)
+
+              i = i + 1
+              print "Numbers now: ", numbers
+              print "At the bottom i is %d" % i
+
+	      print "And times 2 is %d" % (i * 2)
+
+        print "The numbers: "
+
+        for num in numbers:
+            print num
+
+if __name__ == '__main__':
+   dumber_nums(i = 0, numbers = [], product = 0 * 2)
+
+
+
+
+
+
