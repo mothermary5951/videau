@@ -1,0 +1,42 @@
+This is a reminder file for getting in and out of python on a terminal command line
+In = python
+Out = control-shift-D  which makes a carrot-D  ^D
+
+Bradley wants me to think about writing a python program to open, parse, sort, and select
+MolProbity bug reports.  This will involve learning to open the email error files, 
+Identify different parts of the file,
+search through them for specific key words, 
+find what we're looking for, and put those files somewhere.
+
+Three different errors (at least) should be searched for:
+Specify element (atom labels) types (C, O, H, N, etc.)
+Unknown charge
+ENDMDL record missing at end of input
+
+
+
+Here's how to get a file open from inside python:
+
+11:48:46 c3po ~/Desktop/mystuff/Emacs_Folder> python
+Python 2.6.1 (r261:67515, Jun 24 2010, 21:47:49) 
+[GCC 4.2.1 (Apple Inc. build 5646)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> txt = open("testpython.txt")
+>>> txt.read()
+"This is a reminder file for getting in and out of python on a terminal command line\nIn = python\nOut = control-shift-D  which 
+makes a carrot-D  ^D\n\nBradley wants me to think about writing a python program to open, parse, sort, and select\nMolProbity 
+bug reports.  This will involve learning to open the email error files, \nIdentify different parts of the file,\nsearch through 
+them for specific key words, \nfind what we're looking for, and put those files somewhere.\n\nThree different errors (at least) 
+should be searched for:\nSpecify element (atom labels) types (C, O, H, N, etc.)\nUnknown charge\nENDMDL record missing at end of 
+input\n\n"
+>>> txt.close()
+>>> 
+
+
+It is very important to CLOSE each file after you open it, so that python doesn't go crazy running around looking for files.
+
+Python will open a file with any suffix;  doesn't have to be xx.py
+
+You have to be in the right directory, though.
+
+
