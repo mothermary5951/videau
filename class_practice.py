@@ -7,7 +7,8 @@ class protein:
         print "This protein has %d aminos" % self.amino_acids
 
     def count_helix(self):
-        print "This protein has %d helices" % self.helix_number
+        return
+##      print "This protein has %d helices" % self.helix_number
 
 class subunit(protein):
     def domain(self):
@@ -33,3 +34,5 @@ hemoglobin.amino_acids = 102
 hemoglobin.helix_number = 3
 hemoglobin.fold()
 hemoglobin.count_helix()
+
+print "'%s', '%s', and '%s' have %d, %d, and %d amino acids, respectively." % ['betasheet', 'ricin', 'hemoglobin'].fold() 
