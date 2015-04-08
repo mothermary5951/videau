@@ -2,7 +2,7 @@ for x in xrange(1, 6):
      if x == 5:    ## multiplies by 1 through 4; stops at 5
          break
      for y in xrange(1, 6): ## stopped  at 6
-          if y == 6:     ## so only multiplies by 5!!!
+          if y == 6:     
               break
           else:
               print '%d * %d = %d' % (x, y, x * y)
