@@ -22,5 +22,6 @@ print ' '.join(stuff) #  what? cool!   # prints stuff list cleanly, with no punc
 print '#'.join(stuff[3:7])  # super stellar! # prints a range of list members separated by only #.
 
 ## NOTE: TUPLES ARE IN PARENS, AND CANNOT BE CHANGED or APPENDED TO!!!!!
-  
+## NOTE ON POP:  Takes a Maximum of 1 argument, so that the empty parens can be changed to single index
+#  but not to a string or to more than one integer.
 
