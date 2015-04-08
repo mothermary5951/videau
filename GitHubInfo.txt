@@ -1,0 +1,48 @@
+Github best practices:
+
+git clone is like svn co
+give it the https clone url to the right on a github page
+
+git clone https://github.com/rlabduke/molp3.git
+
+git commit is minor deal, do this all the time, works as local opperation
+git push is equivalent to svn ci, communicates with online server
+
+git acts kind of like a local server, even unplugged, I have access to version history
+
+git status (constantly)
+git log (before merging)
+
+git add : adds a file to the next commit
+-adds a new file to tracking (svn A)
+-adds a tracked file to next commit (svn M)
+
+git commit -a : bypasses the git add step and commits all files with changes, rather like svn ci
+git commit -m : message
+
+git push talks to server
+-if you're in a branch this updates the server branch
+-merging with master is different
+
+git pull is svn up, basically
+fetch from the server, then checkout to most recent
+
+git checkout : local operation, goes to a specific version
+
+git branch : branching is cheap and easy
+git branch -a : lists branches
+
+e.g git branch cjw_notebook_edit_removal
+branches are made relative to current location; you can branch from a branch
+
+git branch -d "name": deletes a branch (easy for branches that have never been committed, harder otherwise)
+
+git config --global user.name "Your Name"
+git config --global user.email you@example.com
+git commit --amend --reset-author
+
+first push:
+git push -u origin "branch_name"
+
+
+
