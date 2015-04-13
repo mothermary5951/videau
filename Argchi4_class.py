@@ -2,34 +2,37 @@ class chi4280:
     "Arg chi4 tpt rotamers in the 280 degree group"
     rotamerCount = 0
 
-    def __init__(self, pdbid, chain, residue):
+    def __init__(self, pdbid, chain, residue):    ### important to spell init, not "inti"  ahem.
         self.pdbid = pdbid
         self.chain = chain
         self.residue = residue
-        self.rotamerCount += 1
+        chi4280.rotamerCount += 1     ##  This could also read self.rotamerCount
 
     def displayCount(self):
-        print "Total rotamer %d" % self.rotamerCount
+        print "Total rotamer %d" % chi4280.rotamerCount
 
     def displaychi4280(self):
         print "PDBid: ", self.pdbid, ", Chain: ", self.chain, ",Residue: ", self.residue
 
-rotamer1 = chi4280("1a7s", "A", "210")
-rotamer2 = chi4280("1jiw", "P", "171")
-rotamer3 = chi4280("1k2x", "C", "111")
-rotamer4 = chi4280("1p1j", "A", "222")
-rotamer5 = chi4280("1p1j", "A", "225")
-rotamer6 = chi4280("1q0r", "A", "46")
-rotamer7 = chi4280("1rkd", "A", "298")
-rotamer8 = chi4280("1y0h", "A", "23")
-rotamer9 = chi4280("1y0h", "A", "62")
+rotamers = []   ## The empty list enables the running of a for-loop.
 
-results = chi4280.displaychi4280()
 
-## results = displaychi4280(["rotamer1", "rotamer2", "rotamer3", "rotamer4", "rotamer5", "rotamer6", "rotamer7", "rotamer8", "rotamer9"])
-## print "Here are selected instances of Arg tpt280 rotamers: %s" % results                                                    
+rotamers.append(chi4280("1a7s", "A", "210"))   ## calls append on the variable (emptylist) rotamers to fill the list 
+rotamers.append(chi4280("1jiw", "P", "171"))
+rotamers.append(chi4280("1k2x", "C", "111"))
+rotamers.append(chi4280("1p1j", "A", "222"))
+rotamers.append(chi4280("1p1j", "A", "225"))
+rotamers.append(chi4280("1q0r", "A", "46"))
+rotamers.append(chi4280("1rkd", "A", "298"))
+rotamers.append(chi4280("1y0h", "A", "23"))
+rotamers.append(chi4280("1y0h", "A", "62"))
 
-print "Here are selected instances of Arg tpt280 rotamers: %s" % results
+print "Here are %d selected instances of Arg tpt280 rotamers:  " % chi4280.rotamerCount
+
+for e in rotamers:             # Easy little for-loop;  Use 'i' for numbers and 'e' for elements.
+    e.displaychi4280()         ## Calls the defined function 'displaychi4280' on the 'elements' in list 'rotamers'.
+    
+
 
   
 
