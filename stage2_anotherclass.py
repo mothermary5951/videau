@@ -47,6 +47,4 @@ installs.condense("oil heater", "$200", "electric", "Lowe's")
 
 print  "Here are the %d appliances common in households:" % installs.electricCount
 
-for name in installs:
 
-    name.displayAppliance()
