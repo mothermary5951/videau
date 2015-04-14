@@ -48,3 +48,10 @@ installs.condense("oil heater", "$200", "electric", "Lowe's")
 print  "Here are the %d appliances common in households:" % installs.electricCount
 
 
+
+def unwrap(self:0, name:1, price:2, energy:3, store:4):
+    purchase2 = Appliance(0, 1, 2, 3, 4)
+
+    self.items.append(purchase)
+
+    print "Here are the %d types of appliances priced: %s " % installs.electricCount, % installs.unwrap(1)   
