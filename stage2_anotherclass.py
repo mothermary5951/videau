@@ -38,8 +38,10 @@ class Appliances:
     def displayAppliances(self):
         print "Item: ", self.name, "Price: ", self.price, "Energy Source: ", self.energy, "Store: ", self.store
 
-    def displayNames(self):      ## 
-        print
+    def displayNames(self):      ##  DisplayNames should iterate through the 'items' list and call 'DiplayName' on each appliance object.
+                                     ## two lines of code
+        for each_Appliance in self.items:
+            each_Appliance.displayName()
 
 installs = Appliances()
 
@@ -51,7 +53,7 @@ installs.condense("water heater", "$490", "gas", "Lowe's")
 installs.condense("air conditioner", "$1100", "electric", "Wright Appliance")
 installs.condense("oil heater", "$200", "electric", "Lowe's")
 
-print  "Here are the %d appliances common in households: %s " % Appliances.electricCount
+## print  "Here are the %d appliances common in households: %s " % Appliances.electricCount
 
 
 installs.displayNames()
