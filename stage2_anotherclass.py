@@ -15,19 +15,19 @@ class Appliances:
     electricCount = 0
     items = []
 
-    def condense(name, price, energy, store):
+    def condense(self, name, price, energy, store):
         purchase = Appliance(name, price, energy, store)
 
-        items.append(purchase)    
+        self.items.append(purchase)    
 
         if energy == "electric":
-            electricCount += 1
+            self.electricCount += 1
 
         elif energy == "electric or gas":
-            electricCount += 1
+            self.electricCount += 1
 
         else:
-            electricCount += 0
+            self.electricCount += 0
 
     def displayCount(self):
         print "Total electric appliances available: %d" % Appliances.electricCount
@@ -35,16 +35,18 @@ class Appliances:
     def displayAppliances(self):
         print "Item: ", self.name, "Price: ", self.price, "Energy Source: ", self.energy, "Store: ", self.store
 
-items.condense("stove", "$650", "gas", "Wright Appliance")
-        items.condense("refrigerator", "$825", "electric", "Home Depot")
-        items.condense("washer", "$500", "electric", "Sears")
-        items.condense("dryer", "$425", "electric or gas", "Sears")
-        items.condense("water heater", "$490", "gas", "Lowe's")
-        items.condense("air conditioner", "$1100", "electric", "Wright Appliance")
-        items.condense("oil heater", "$200", "electric", "Lowe's")
+installs = Appliances()
 
-       print  "Here are the %d appliances common in households:" % Appliances.electricCount
+installs.condense("stove", "$650", "gas", "Wright Appliance")
+installs.condense("refrigerator", "$825", "electric", "Home Depot")
+installs.condense("washer", "$500", "electric", "Sears")
+installs.condense("dryer", "$425", "electric or gas", "Sears")
+installs.condense("water heater", "$490", "gas", "Lowe's")
+installs.condense("air conditioner", "$1100", "electric", "Wright Appliance")
+installs.condense("oil heater", "$200", "electric", "Lowe's")
 
-        for name in items:
+print  "Here are the %d appliances common in households:" % installs.electricCount
 
-            name.displayAppliance()
+for name in installs:
+
+    name.displayAppliance()
