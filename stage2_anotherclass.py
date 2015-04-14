@@ -10,6 +10,9 @@ class Appliance:
     def displayAppliance(self):
         print "Item: ", self.name, "Price: ", self.price, "Energy Source: ", self.energy, "Store: ", self.store
 
+    def displayName(self):
+        print "Item: %s" % self.name
+
 class Appliances:
     "List object to put list objects in"
     electricCount = 0
@@ -35,6 +38,9 @@ class Appliances:
     def displayAppliances(self):
         print "Item: ", self.name, "Price: ", self.price, "Energy Source: ", self.energy, "Store: ", self.store
 
+    def displayNames(self):      ## 
+        print
+
 installs = Appliances()
 
 installs.condense("stove", "$650", "gas", "Wright Appliance")
@@ -45,6 +51,11 @@ installs.condense("water heater", "$490", "gas", "Lowe's")
 installs.condense("air conditioner", "$1100", "electric", "Wright Appliance")
 installs.condense("oil heater", "$200", "electric", "Lowe's")
 
-print  "Here are the %d appliances common in households:" % installs.electricCount
+print  "Here are the %d appliances common in households: %s " % Appliances.electricCount; % installs.extract
+
+
+
+
+
 
 
