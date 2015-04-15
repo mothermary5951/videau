@@ -2,9 +2,14 @@
 
 ## print recordings
 
-artists = "Basie Calloway Shumann Pavarotti grandmother Presley Wood Chopin"  #  variable is a string
-
+artists = "Count_Basie, Cab_Calloway, Shumann, Pavarotti, grandmother, Presley, Wood, Chopin"  #  variable is a string
+               ## there may be a way other than underscore to string 1st and last names, but I don't know it.
 print artists
+
+##  NOTE:  after the artist_div list is reformatted with 'split', then the original 'artists' list is No 
+##         longer of any use;  if it is called back into the script, then python (for some weird reason)
+##         counts individual characters as string objects rather than using the artists' names which are
+##         the intended string objects 
 
 artists_div = artists.split(' ')  # artists calls split to reformat list as artists_div
 print artists_div   #prints out 'artists' with added single quotes and commas
