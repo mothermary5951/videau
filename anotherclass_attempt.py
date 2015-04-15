@@ -15,19 +15,20 @@ class Appliances:
     def displayAppliances(self):
         print "Item: ", self.name, "Price: ", self.price, "Energy Source: ", self.energy, "Store: ", self.store
 
-item = []
 
-item.append(Appliances("stove", "$650", "electric or gas", "Wright Appliance"))
-item.append(Appliances("refrigerator", "$825", "electric", "Home Depot"))
-item.append(Appliances("washer", "$500", "electric", "Sears"))
-item.append(Appliances("dryer", "$425", "electric or gas", "Sears"))
-item.append(Appliances("water heater", "$490", "electric or gas", "Lowe's"))
-item.append(Appliances("air conditioner", "$1100", "electric", "Wright Appliance"))
-item.append(Appliances("oil heater", "$200", "electric", "Lowe's"))
+items = []
+
+items.append(Appliances("stove", "$650", "electric or gas", "Wright Appliance"))
+items.append(Appliances("refrigerator", "$825", "electric", "Home Depot"))
+items.append(Appliances("washer", "$500", "electric", "Sears"))
+items.append(Appliances("dryer", "$425", "electric or gas", "Sears"))
+items.append(Appliances("water heater", "$490", "electric or gas", "Lowe's"))
+items.append(Appliances("air conditioner", "$1100", "electric", "Wright Appliance"))
+items.append(Appliances("oil heater", "$200", "electric", "Lowe's"))
 
 print "Here is the household appliance information for %d electric products:" % Appliances.electricCount 
 
-for e in item:
+for e in items:
     
     e.displayAppliances()
     
@@ -46,3 +47,4 @@ item7 = Appliances("oil heater", "$200", "electric", "Lowe's")
 appliances = "stove,refrigerator,washer,dryer,water heater,air conditioner,heater"
 
  
+
