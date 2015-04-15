@@ -16,12 +16,12 @@ class Appliance:
 class Appliances:
     "List object to put list objects in"
     electricCount = 0
-    items = []
+    items = []          ##  the objects in 'items' are all the appliances listed below but not specifically listed here for humans. 
 
     def condense(self, name, price, energy, store):
         purchase = Appliance(name, price, energy, store)
 
-        self.items.append(purchase)    
+        self.items.append(purchase)    ## Note the 'self.' before 'items;  becomes very important in the for-loop below.
 
         if energy == "electric":
             self.electricCount += 1
@@ -33,12 +33,15 @@ class Appliances:
             self.electricCount += 0
 
     def displayCount(self):
-        print "Total electric appliances available: %d" % Appliances.electricCount
+        print "Total electric appliances available: %d" % self.electricCount  ##KEEP TRYING TO FIX THIS TOMORR
 
     def displayAppliances(self):
-        print "Item: ", self.name, "Price: ", self.price, "Energy Source: ", self.energy, "Store: ", self.store
 
-    def displayNames(self):      ##  DisplayNames should iterate through the 'items' list and call 'DiplayName' on each appliance object.
+        for each_Appliance in self.items:
+            each_Appliance.displayAppliance()
+
+
+    def displayNames(self):      ##  DisplayNames should iterate through the 'items' list and call 'DisplayName' on each appliance object.
                                      ## two lines of code
         for each_Appliance in self.items:
             each_Appliance.displayName()
@@ -53,11 +56,10 @@ installs.condense("water heater", "$490", "gas", "Lowe's")
 installs.condense("air conditioner", "$1100", "electric", "Wright Appliance")
 installs.condense("oil heater", "$200", "electric", "Lowe's")
 
-## print  "Here are the %d appliances common in households: %s " % Appliances.electricCount
 
 
 installs.displayNames()
-
-
+installs.displayAppliances()
+installs.displayCount()
 
 
