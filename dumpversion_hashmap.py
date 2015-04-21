@@ -1,11 +1,11 @@
 def new(num_buckets=256):               # creates a new function with the potential for 256 (2 to the 7th) containers                      
     """Initializes a Map with the given number of buckets."""   #  python uses 'map' instead of 'dictionary'                               
-    aMap = []                           # variable 'aMap' starts as an empty list                                                          
-    for i in range(0, num_buckets):    # for integer in range of 0 to 256, makes a bucketlist to                                           
+    aMap = []                           # variable 'aMap' starts as an empty list of lists WHICH CAN BE INDEXED BECAUSE THEY ARE ORDERED
+    for i in range(0, num_buckets):    # for integer in range of 0 to 256, makes a bucket list to                                           
         aMap.append([])                # append new buckets to variable list 'aMap' within the function 'new' and                          
-    return aMap                    # returns the total list aMap increased by one.                                                         
+    return aMap                    # returns the total list aMap increased by one bucket list.                                                         
 
-def hash_key(aMap, key):              #'hash is a builtin function. 'hash_key' requires 2 arguments: a new key and the aMap list           
+def hash_key(aMap, key):              #'hash is a builtin function. 'hash_key' requires 2 arguments: a new key and the aMap list index           
     """Given a key, this will create a number and then convert it to an index for the aMap's buckets.""" # hash converts string to integer
     return hash(key) % len(aMap)   #  returns the modulo remainder to be sure the index fits within the aMap larger string                 
 
@@ -55,18 +55,42 @@ def delete(aMap, key):          #  deletes a key from the aMap list
             del bucket[i]        #  then delete the bucket                                                                                 
             break               # and then stop deleting                                                                                   
 
-def dump(aMap):                 # print out the keys and values for each bucket in the aMap list                                           
+def dump(aMap):                 # print out hash/index integer (same thing in this script) & keys/values list for each bucket in the aMap list
     """Prints out what's in the Map."""
-    for bucket in aMap:
-        bucket = i, k, v
-        if bucket:
-            for i, k, v in bucket:
-                print dump(i, k, v)
+    for index, bucket in enumerate(aMap):  # The index of each dict pair/list in aMap list is the Same Thing as the hash assignment in THIS script.
+        for kv in bucket:
+            k, v = kv                     #  where key, value = kv
+            print index, k, v      
 
+
+## NOTE ON 'ENUMERATE':  The builtin function 'enumerate' counts items in any iterable object (MUST be an object) and assigns an index to each item, which
+## can be acccessed with a two-part for-loop such as
+##            for index, item in enumerate(SomeListorListofListsorWhatever)
+##                print index, item
+##  or like the first for-loop in the 'dump' function above, but there the index counts the Buckets and the key & value are tuples In the buckets.
 
 ##  NOTE ON 'HASH':  Hash is a python builtin function that (among other things) assigns an integer to a string to establish its           
 ##   position in a Map or larger string;  works sort of like an index in a tuple.  It uses the modulo to divide the hash(key) assigned     
 ##   integer into the total string length to be sure that the position assigned fits within the string length.  Hashing is made of deep    
 ##  computer magic algorithms developed by thousands of programmers over 30 years.  BELIEVE, TRUST, and USE!!!                             
+
+########  In python, printing out list members and then printing out 'i'-indices and 'b'-list members via the 'enumerate' builtin
+## >>> bucket = [1, 2, 3, 4]
+## >>> for b in bucket:
+## ...   print b
+## ... 
+## 1
+## 2
+## 3
+## 4
+## >>> for i,b in enumerate(bucket):
+## ... 
+## ...   print i,b
+## ... 
+## 0 1
+## 1 2
+## 2 3
+## 3 4
+## >>> 
 
 
