@@ -1,4 +1,4 @@
-people = ['shirley', 'fred', 'patrick', 'sam'] ## list of strings
+xpeople = ['shirley', 'fred', 'patrick', 'sam'] ## list of strings
 print people[1]  ## returns result by the index, which is 'fred'
 
 people[2] = 'Steven' ## YOU MUST USE the index number to change list members #######
